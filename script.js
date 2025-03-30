@@ -1,3 +1,22 @@
+let humanScore = 0;
+let computerScore = 0;
+
+const human_score_div = document.querySelector("#human-score");
+human_score_div.textContent = humanScore;
+
+const computer_score_div = document.querySelector("#robot-score");
+computer_score_div.textContent = computerScore;
+
+//Game
+btn_rock = document.querySelector("btn-rock");
+btn_rock.addEventListener("click", playRound("rock"));
+
+btn_paper = document.querySelector("btn-paper");
+
+
+btn_scissors = document.querySelector("btn-scissors");
+
+
 function getComputerChoice() {
     let computerChoice = Math.random();
     if (computerChoice < 0.33) {
@@ -69,8 +88,3 @@ function playRound(humanChoice, computerChoice) {
         console.log("Computer Score: " + computerScore);
     }
  }
-
-let humanScore = 0;
-let computerScore = 0;
-
-playGame(5);
