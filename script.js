@@ -2,20 +2,25 @@ let humanScore = 0;
 let computerScore = 0;
 
 const human_score_div = document.querySelector("#human-score");
-human_score_div.textContent = humanScore;
-
 const computer_score_div = document.querySelector("#robot-score");
-computer_score_div.textContent = computerScore;
 
 //Game
-btn_rock = document.querySelector("btn-rock");
-btn_rock.addEventListener("click", playRound("rock"));
+updateCounter();
 
-btn_paper = document.querySelector("btn-paper");
+btn_rock = document.querySelector("#btn-rock");
+btn_rock.addEventListener("click", () => playRound("rock"));
+
+btn_paper = document.querySelector("#btn-paper");
+btn_paper.addEventListener("click", () => playRound("paper"));
+
+btn_scissors = document.querySelector("#btn-scissors");
+btn_scissors.addEventListener("click", ()=> playRound("scissors"));
 
 
-btn_scissors = document.querySelector("btn-scissors");
-
+function updateCounter() {
+    human_score_div.textContent = humanScore;
+    computer_score_div.textContent = computerScore;
+}
 
 function getComputerChoice() {
     let computerChoice = Math.random();
@@ -30,17 +35,8 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    while(true) {
-        let humanChoice = prompt("Enter your choice: rock, paper or scissors");
-        if (humanChoice.toLowerCase() == "rock" || humanChoice.toLowerCase() =="paper" || humanChoice.toLowerCase() == "scissors") {
-            return humanChoice.toLowerCase();
-        }
-    }
-
-}
-
-function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice) {
+    var computerChoice = getComputerChoice();
     if (humanChoice == computerChoice) {
         console.log("It is a draw.");
     }
@@ -76,15 +72,5 @@ function playRound(humanChoice, computerChoice) {
             computerScore++;
         }
     }
- }
-
- function playGame(rounds) {
-    for (let i = 0; i < rounds; i++) {
-        console.log("ROUND " + parseInt(i+1));
-        humanChoiceRound = getHumanChoice();
-        computerChoiceRound = getComputerChoice();
-        playRound(humanChoiceRound, computerChoiceRound);
-        console.log("Human Score: " + humanScore);
-        console.log("Computer Score: " + computerScore);
-    }
+    updateCounter();
  }
