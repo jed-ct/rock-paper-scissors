@@ -3,6 +3,7 @@ let computerScore = 0;
 
 const human_score_div = document.querySelector("#human-score");
 const computer_score_div = document.querySelector("#robot-score");
+const round_result_div = document.querySelector("#round-result");
 
 //Game
 updateCounter();
@@ -38,37 +39,37 @@ function getComputerChoice() {
 function playRound(humanChoice) {
     var computerChoice = getComputerChoice();
     if (humanChoice == computerChoice) {
-        console.log("It is a draw.");
+        round_result_div.textContent = "It is a draw.";
     }
     else if (humanChoice == "rock") {
         if (computerChoice == "scissors") {
-            console.log("You win! Rock beats scissors!");
+            round_result_div.textContent = "You win! Rock beats scissors!";
             humanScore++;
         }
         else {
-            console.log("You lose. Paper beats rock.");
+            round_result_div.textContent = "You lose. Paper beats rock.";
             computerScore++;
         }
     }
 
     else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
-            console.log("You win! paper beats rock!");
+            round_result_div.textContent = "You win! paper beats rock!";
             humanScore++;
         }
         else {
-            console.log("You lose. Scissors beats paper.");
+            round_result_div.textContent = "You lose. Scissors beats paper.";
             computerScore++;
         }
     }
 
     else if (humanChoice == "scissors") {
         if (computerChoice == "paper") {
-            console.log("You win! Scissors beat paper.");
+            round_result_div.textContent = "You win! Scissors beat paper.";
             humanScore++;
         }
         else {
-            console.log("You lose. Rock beats scissors.");
+            round_result_div.textContent = "You lose. Rock beats scissors.";
             computerScore++;
         }
     }
