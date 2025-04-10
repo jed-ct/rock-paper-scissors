@@ -12,9 +12,29 @@ body {
 #header {   
     background-color: #1F2937;
     color: #F9FAF8;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 900;
     display: flex;
     justify-content: center;
     padding: 10px;
+}
+
+#player-choice-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.choice-button {
+    background-color: #3882F6;
+    color: #F9FAF8;
+    font-size: 32px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.choice-button:hover {
+    background-color: #214b8f;
 }

@@ -6,6 +6,8 @@ const computer_score_div = document.querySelector("#robot-score");
 const round_result_div = document.querySelector("#round-result");
 const player_choice_div = document.querySelector("#player-choice");
 const robot_choice_div = document.querySelector("#robot-choice");
+const player_choice_img = document.querySelector("#player-choice-img");
+const robot_choice_img = document.querySelector("#robot-choice-img");
 
 //Game
 updateCounter();
@@ -42,6 +44,8 @@ function playRound(humanChoice) {
     var computerChoice = getComputerChoice();
     player_choice_div.textContent = humanChoice;
     robot_choice_div.textContent = computerChoice;
+    player_choice_img.src = humanChoice + ".png";
+    robot_choice_img.src = computerChoice + ".png";
     if (humanChoice == computerChoice) {
         round_result_div.textContent = "It is a draw.";
     }
