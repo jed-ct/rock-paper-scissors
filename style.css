@@ -33,8 +33,25 @@ body {
     border: none;
     border-radius: 8px;
     padding: 10px 20px;
+    margin: 24px;
 }
 
 .choice-button:hover {
     background-color: #214b8f;
+}
+
+#match-visualization {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+}
+
+.choice-label {
+    text-align: center;
+    font-size: 24px;
+}
+
+.choice-img {
+    width: 300px;
+    height: 300px;
 }
