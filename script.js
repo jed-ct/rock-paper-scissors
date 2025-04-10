@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+let isGameDone = false;
 
 const human_score_div = document.querySelector("#human-score");
 const computer_score_div = document.querySelector("#robot-score");
@@ -41,11 +42,16 @@ function getComputerChoice() {
 }
 
 function playRound(humanChoice) {
+    if (isGameDone) {
+        return;
+    }
+
     var computerChoice = getComputerChoice();
     player_choice_div.textContent = humanChoice;
     robot_choice_div.textContent = computerChoice;
     player_choice_img.src = humanChoice + ".png";
     robot_choice_img.src = computerChoice + ".png";
+
     if (humanChoice == computerChoice) {
         round_result_div.textContent = "It is a draw.";
     }
@@ -82,4 +88,15 @@ function playRound(humanChoice) {
         }
     }
     updateCounter();
+    if (humanScore >= 5) {
+        round_result_div.textContent = "You win! Restart the page to play again.";
+        isGameDone = true;
+        return;
+    }
+    else if (computerScore >= 5) {
+        round_result_div.textContent = "You lose. Restart the page to play again.";
+        isGameDone = true;
+        return;
+    }
+
  }
