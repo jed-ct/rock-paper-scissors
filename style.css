@@ -19,6 +19,22 @@ body {
     padding: 10px;
 }
 
+#scoreboard-div {
+    display: flex;
+    justify-content: center;
+}
+
+#scoreboard {
+    background-color: #3882F6;
+    color: #F9FAF8;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
 #player-choice-buttons {
     display: flex;
     justify-content: center;
@@ -52,6 +68,6 @@ body {
 }
 
 .choice-img {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
 }
